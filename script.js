@@ -31,3 +31,20 @@ document.addEventListener("keydown", (event) => {
     navToggle.focus();
   }
 });
+
+
+// Highlight the nav link for the section currently in view.
+const sections = document.querySelectorAll("main section[id]");
+const navAnchors = navLinks ? navLinks.querySelectorAll("a") : [];
+if (sections.length && navAnchors.length && "IntersectionObserver" in window) {
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navAnchors.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("active", isActive);
+      });
+    });
+  }, { rootMargin: "-50% 0px -50% 0px" });
+  sections.forEach((section) => spyObserver.observe(section));
+}
