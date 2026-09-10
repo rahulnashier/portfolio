@@ -16,3 +16,7 @@ My personal portfolio site, built from scratch with plain HTML, CSS and JavaScri
 - HTML5
 - CSS3
 - Vanilla JavaScript
+
+## Changelog
+
+See CHANGELOG.md for a history of notable changes.
