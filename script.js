@@ -22,3 +22,12 @@ if (navToggle && navLinks) {
     });
   });
 }
+
+// Close the mobile nav when Escape is pressed.
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navLinks.classList.contains("open")) {
+    navLinks.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.focus();
+  }
+});
