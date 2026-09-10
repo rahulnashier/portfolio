@@ -54,6 +54,11 @@ body {
   color: #1a1a1a;
 }
 
+.nav-links a.active {
+  color: #3a7d44;
+  font-weight: 600;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
